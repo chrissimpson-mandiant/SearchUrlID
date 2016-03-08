@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
   Script for returning the subject line of messages based on the OWA Url ID
 .DESCRIPTION
@@ -73,6 +73,11 @@ Param (
 	[switch]
 	$Credentials
 )
+
+function Encode-URL($rawURL)
+{
+	return [System.Web.HttpUtility]::UrlEncode($rawURL)
+}
 
 function Search-UrlID {
 
